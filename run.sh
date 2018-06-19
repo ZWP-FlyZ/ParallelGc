@@ -1,2 +1,3 @@
-make run
+make clean
+make all
 ./gc.out

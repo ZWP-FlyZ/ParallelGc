@@ -11,7 +11,9 @@ struct obj_param {
     double b[N];
     // 零次参数向量
     double c;
-} param; 
+}; 
+
+
 
 
 // 目标函数

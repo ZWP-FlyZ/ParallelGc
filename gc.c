@@ -13,11 +13,13 @@
 double x[N];
 
 
+extern struct obj_param param;
+
 int main(){
 
 	printf("hello world N=%d\n",N);
 	for(int i=0;i<N;i++) x[i]=(double)i;
-	for(int i=0;i<N;i++) printf("%.3f ",x[i]);
+	for(int i=0;i<N;i++) printf("%.3f ",param.b[i]);
 	//double res = obj_function(x);
 	double res = pow(2.0,2.0);
 	printf("res = %f\n",res);

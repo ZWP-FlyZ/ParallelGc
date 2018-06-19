@@ -1,17 +1,8 @@
 
-GCC = gcc -c
-LD 	= gcc 
+G++ = g++ -fopenmp
 
-OBJSET	= gc.o gc_inf.o line_search.o \
-		vect_op.o 		
-
-
-
-%.o: %.c makefile 
-	$(GCC) $*.c -o $*.o
-
-run:$(OBJSET)
-	$(LD) *.o -o gc.out
+all:
+	$(G++) *.c -o gc.out
 
 clean:
 	rm -f *.o *.out

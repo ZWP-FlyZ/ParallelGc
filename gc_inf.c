@@ -1,5 +1,7 @@
 #include "gc_inf.h"
 
+struct obj_param param;
+
 
 // 目标函数 y = x.T*G*x + b.T*x + c
 double obj_function(double* x){
