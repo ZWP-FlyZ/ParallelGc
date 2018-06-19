@@ -31,6 +31,9 @@ void dec_function(double* x,double *result){
 	}
 }
 
+
+
+
 // 初始化目标函数
 void init_obj_function(){
     

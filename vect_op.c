@@ -1,6 +1,6 @@
 #include "vect_op.h"
 #include "gc_setting.h"
-
+#include <stdio.h>
 // 两向量相加
 void vect_add(double *a,double *b,double *result){
     for(int i =0;i<N;i++)
@@ -22,6 +22,18 @@ double vect_mult_sum(double *a,double *b){
     double result=0.0;
     for(int i =0;i<N;i++)
         result += a[i]*b[i];
+    return result;
 }
 
+void vect_copy(double * origin,double *targe){
+        for(int i =0;i<N;i++) targe[i] = origin[i];
+}
+
+
+//打印向量
+void show_vect(double * a){
+    printf("[ ");
+    for(int i =0;i<N;i++) printf("%.3f ",a[i]);
+    printf("]");
+}
 

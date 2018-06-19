@@ -13,4 +13,9 @@ void vect_mult_one(double *a,double b,double *result);
 //两向量内积
 double vect_mult_sum(double *a,double *b);
 
+void vect_copy(double * origin,double *targe);
+
+//打印向量
+void show_vect(double * a);
+
 #endif

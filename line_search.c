@@ -7,7 +7,7 @@
 
 //采用Armijo线搜索确定步长 ak
 double armijo_func(double *x,double *dk,double beta,double sigma){
-    int max_m = 20;
+    int max_m = ARMIJO_MAX_TEST_M;
     double f_x_k = 0.0;// 原值
     double g_x_k[N];// 梯度向量
     double tmp=0.0,tmp1=0.0,tmp2=0.0;
@@ -27,7 +27,7 @@ double armijo_func(double *x,double *dk,double beta,double sigma){
         if(obj_function(tmp_vect)<=tmp1)
             return beta_m;
     }
-    printf(">>>>><ak><<<<<");
+    printf("AK MAX TEST M ak=%f\n",beta_m);
     return beta_m;
 }
 
