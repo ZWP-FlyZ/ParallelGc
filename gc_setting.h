@@ -2,7 +2,7 @@
 #define __GC_SETTING__
 
 // 变量向量维数
-#define N 20
+#define N 2
 
 // 梯度精度
 #define END 0.01

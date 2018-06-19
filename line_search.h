@@ -7,7 +7,7 @@
 #define ARMIJO_SIGMA 0.25
 
 //sigma 在(0,0.5)
-#define ARMIJO_MAX_TEST_M 20
+#define ARMIJO_MAX_TEST_M 200
 
 
 //采用Armijo线搜索确定步长 ak

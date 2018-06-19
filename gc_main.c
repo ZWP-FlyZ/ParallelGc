@@ -1,5 +1,6 @@
 /*
- * 利用OpenMP并行处理高維正定二次方程
+ * 共轭梯度法计算高维变量方程极小值
+ * 利用OpenMP 加速方程计算过程
  * 
  * 
  */
@@ -20,9 +21,8 @@ int main(){
 #ifdef __FR_GC__
 	fr_gc_main();
 #else
-	void default_gc_main();
+	default_gc_main();
 #endif
-
 	return 0;
 }
 

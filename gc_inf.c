@@ -37,5 +37,12 @@ void dec_function(double* x,double *result){
 // 初始化目标函数
 void init_obj_function(){
     
+	//测试函数 z = x^2 + y^2+ x + y 
+	param.G[0][0] = 1.0;
+	param.G[1][1] = 1.0;
+	param.b[0] = 1.0;
+	param.b[1] = 1.0;
+	param.c=0.0;
+
 }
 
