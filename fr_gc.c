@@ -1,5 +1,5 @@
 /*
- * 利用OpenMP并行处理高維正定二次方程
+ * FR共轭梯度实现 
  * 
  * 
  */
@@ -26,12 +26,13 @@ extern struct obj_param param;
 
 //设置初始点
 void init_x(double *x){
-
+	x[0]=2.0;
+	x[1]=1.0;
 }
 
 int fr_gc_main(){
 
-	printf("FR_GC start N=%d, END=%f, MAX_REPEAT=%d",N,END,MAX_REPEAT);
+	printf("FR_GC start N=%d, END=%f, MAX_REPEAT=%d\n",N,END,MAX_REPEAT);
 
     // 初始化
     init_x(x);
@@ -44,15 +45,20 @@ int fr_gc_main(){
 
         //计算范数
         tmp = vect_mult_sum(gk,gk);
-        printf("%f\n",tmp);
+        printf("step=%d ||gk||=%f\n",i,tmp);
         if(sqrt(tmp)<=END){
-            printf("step=%d\n",i);
+        	tmp = obj_function(x);
+        	printf("\n--------------------------\n");
+            printf("all step=%d min=%f\n",i+1,tmp);
+            printf("x=");
             show_vect(x);
+        	printf("\n--------------------------\n");
             break;
         }
         //计算方向
         if(i==0) vect_mult_one(gk,-1.0,dk);
         else{
+        	// 以下为FR共轭梯度迭代过程 
             beta_k_1 = tmp/gk_gk;
             vect_mult_one(dk,beta_k_1,dk);
             vect_mult_one(gk,-1.0,gk);
