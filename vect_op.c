@@ -59,7 +59,17 @@ void vect_copy(double * origin,double *targe){
 //打印向量
 void show_vect(double * a){
     printf("[ ");
-    for(int i =0;i<N;i++) printf("%.3f ",a[i]);
+    if(N<11) {
+        for(int i =0;i<N;i++) 
+            printf("%.3f ",a[i]);
+    }
+    else{
+        for(int i =0;i<5;i++) 
+            printf("%.3f ",a[i]);
+        printf("... ");
+        for(int i =0;i<5;i++) 
+            printf("%.3f ",a[N-5+i]);
+    }
     printf("]");
 }
 

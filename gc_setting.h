@@ -8,7 +8,7 @@
 //0-不使用OpenMP 1-开启OpenMP
 #define USEING_PARALLEL 1
 // 使用线程数
-#define THREAD_NUM 8
+#define THREAD_NUM 1
 // 开启深度并行优化,USEING_PARALLEL生效时起效
 // 可能降低效率
 #define DEEP_PARALLEL 0
@@ -16,7 +16,7 @@
 //------------------------------
 
 // 变量向量维数
-#define N 10000
+#define N 9000
 
 // 梯度结束精度
 #define END 0.001

@@ -62,12 +62,23 @@ void dec_function(double* x,double *result){
 // 初始化目标函数
 void init_obj_function(){
     
-	//测试函数 z = x^2 + y^2+ x + y 
-	param.G[0][0] = 2.0;
-	param.G[1][1] = 1.0;
-	param.b[0] = 1.0;
-	param.b[1] = 1.0;
+	// //测试函数 z = x^2 + y^2+ x + y 
+	// param.G[0][0] = 2.0;
+	// param.G[1][1] = 1.0;
+	// param.b[0] = 1.0;
+	// param.b[1] = 1.0;
+	// param.c=0.0;
+	double tmp = 0.0;
+	for(int i=0;i<N;i++)
+		param.G[i][i]=1.0;
+
+	for(int i=0;i<N;i++)
+		param.b[i] = (double)1.0;
+
 	param.c=0.0;
+
+
+
 
 }
 

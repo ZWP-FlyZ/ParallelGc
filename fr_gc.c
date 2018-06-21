@@ -24,10 +24,10 @@ double  gk_gk=0.0,//上一次的gkgk
         ak=0.0;//步长
 extern struct obj_param param;
 
-
+float start_time=0.0;
 //设置初始点
 void init_x(double *x){
-	x[0]=2.0;
+	x[0]=1.0;
 	x[1]=1.0;
 }
 
@@ -39,7 +39,7 @@ int fr_gc_main(){
     init_x(x);
     init_obj_function();
 
-
+    start_time = omp_get_wtime();
     for(int i=0;i<MAX_REPEAT;i++){
 
         dec_function(x,gk);// 计算梯度
@@ -49,11 +49,12 @@ int fr_gc_main(){
         printf("step=%d ||gk||=%f\n",i,tmp);
         if(sqrt(tmp)<=END){
         	tmp = obj_function(x);
-        	printf("\n--------------------------\n");
+        	printf("\n------------ result --------------\n");
             printf("all step=%d min=%f\n",i+1,tmp);
+            printf("all time = %f S\n",omp_get_wtime()-start_time);
             printf("x=");
-            //show_vect(x);
-        	printf("\n--------------------------\n");
+            show_vect(x);
+        	printf("\n------------ result --------------\n");
             break;
         }
         //计算方向
