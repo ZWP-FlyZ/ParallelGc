@@ -11,6 +11,7 @@
 #include "gc_setting.h"
 #include "fr_gc.h"
 #include <math.h>
+#include <omp.h>
 
 double 	x[N],// 测试点向量
 		gk[N],// 当前梯度向量
@@ -51,7 +52,7 @@ int fr_gc_main(){
         	printf("\n--------------------------\n");
             printf("all step=%d min=%f\n",i+1,tmp);
             printf("x=");
-            show_vect(x);
+            //show_vect(x);
         	printf("\n--------------------------\n");
             break;
         }
