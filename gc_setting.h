@@ -9,10 +9,12 @@
 #define USEING_PARALLEL 1
 // 使用线程数
 #define THREAD_NUM 8
+
 // 开启深度并行优化,USEING_PARALLEL生效时起效
 // 可能降低效率
 #define DEEP_PARALLEL 0
 
+#define DEEP_PARALEEL_THREAD_NUM 1
 //------------------------------
 
 // 变量向量维数

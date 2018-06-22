@@ -6,7 +6,7 @@ void vect_add(double *a,double *b,double *result){
 
 #if USEING_PARALLEL
 #if DEEP_PARALLEL
-#pragma omp parallel for num_threads(THREAD_NUM) 
+#pragma omp parallel for num_threads(DEEP_PARALEEL_THREAD_NUM) 
 #endif
 #endif
     for(int i =0;i<N;i++)
@@ -16,7 +16,7 @@ void vect_add(double *a,double *b,double *result){
 void vect_mult(double *a,double *b,double *result){
 #if USEING_PARALLEL
 #if DEEP_PARALLEL
-#pragma omp parallel for num_threads(THREAD_NUM) 
+#pragma omp parallel for num_threads(DEEP_PARALEEL_THREAD_NUM) 
 #endif
 #endif
     for(int i =0;i<N;i++)
@@ -26,7 +26,7 @@ void vect_mult(double *a,double *b,double *result){
 void vect_mult_one(double *a,double b,double *result){
 #if USEING_PARALLEL
 #if DEEP_PARALLEL
-#pragma omp parallel for num_threads(THREAD_NUM) 
+#pragma omp parallel for num_threads(DEEP_PARALEEL_THREAD_NUM) 
 #endif
 #endif
         for(int i =0;i<N;i++)
@@ -38,7 +38,7 @@ double vect_mult_sum(double *a,double *b){
     double result=0.0;
 #if USEING_PARALLEL
 #if DEEP_PARALLEL
-#pragma omp parallel for num_threads(THREAD_NUM) reduction(+:result)
+#pragma omp parallel for num_threads(DEEP_PARALEEL_THREAD_NUM) reduction(+:result)
 #endif
 #endif
     for(int i =0;i<N;i++)
@@ -49,7 +49,7 @@ double vect_mult_sum(double *a,double *b){
 void vect_copy(double * origin,double *targe){
 #if USEING_PARALLEL
 #if DEEP_PARALLEL
-#pragma omp parallel for num_threads(THREAD_NUM) 
+#pragma omp parallel for num_threads(DEEP_PARALEEL_THREAD_NUM) 
 #endif
 #endif
         for(int i =0;i<N;i++) targe[i] = origin[i];

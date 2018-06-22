@@ -37,7 +37,7 @@ double obj_function(double* x){
 
 #if USEING_PARALLEL
 #if DEEP_PARALLEL
-#pragma omp parallel for num_threads(THREAD_NUM) reduction(+:result)
+#pragma omp parallel for num_threads(DEEP_PARALEEL_THREAD_NUM) reduction(+:result)
 #endif
 #endif	
 	for(int i=0;i<N;i++)
